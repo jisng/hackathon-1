@@ -12,7 +12,7 @@ class StatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // 수정 테스트
         // Do any additional setup after loading the view.
     }
     
