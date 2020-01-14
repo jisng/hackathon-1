@@ -7,6 +7,7 @@
 //
 
 import UIKit
+// tab-bar-tag-0: 일별, 오늘 지출 내역 추가 컨트롤러
 
 class DayViewController: UIViewController {
 
