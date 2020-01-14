@@ -8,10 +8,22 @@
 
 import UIKit
 
+
+// tab-bar-tag-2: 통계 컨트롤러
+
 class StatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        // 아아아아아아으아아아아아
+        //ㅁㄴㅇㅁㄴㅇㄹㅁㄴㄹㅁㄹㅁㄴ
+        //ㅁㄴㄹㅁㄴㄹㅁㄴㅁㄹ
+        view.backgroundColor = .systemBlue
+    }
+
+
 
         // Do any additional setup after loading the view.
     }
@@ -26,5 +38,6 @@ class StatsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
