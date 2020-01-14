@@ -12,12 +12,11 @@ import UIKit
 
 class MonthViewController: UIViewController {
     
-    
+    private let calender = JTACMonthView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
         
     }
     
@@ -28,4 +27,14 @@ class MonthViewController: UIViewController {
     
 
 
+}
+
+extension MonthViewController: JTACMonthViewDataSource{
+    func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
+        
+    }
+    
+   
+    
+    
 }
