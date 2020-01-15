@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		09CB2127925DF532A45BD484 /* Pods_HousekeepingBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA6E2DAD61B34A6C89DCEB9 /* Pods_HousekeepingBook.framework */; };
+		31CA2C8723CE2740005116D2 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA2C8623CE2740005116D2 /* DateCell.swift */; };
+		31CA2C8923CEDA2F005116D2 /* SelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA2C8823CEDA2F005116D2 /* SelectedView.swift */; };
 		A666F7FB23CCA7AD0069F0F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666F7FA23CCA7AD0069F0F6 /* AppDelegate.swift */; };
 		A666F7FD23CCA7AD0069F0F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666F7FC23CCA7AD0069F0F6 /* SceneDelegate.swift */; };
 		A666F7FF23CCA7AD0069F0F6 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666F7FE23CCA7AD0069F0F6 /* DayViewController.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		055852CD2F88CF827E05CB74 /* Pods-HousekeepingBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HousekeepingBook.release.xcconfig"; path = "Target Support Files/Pods-HousekeepingBook/Pods-HousekeepingBook.release.xcconfig"; sourceTree = "<group>"; };
 		0DA6E2DAD61B34A6C89DCEB9 /* Pods_HousekeepingBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HousekeepingBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31CA2C8623CE2740005116D2 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		31CA2C8823CEDA2F005116D2 /* SelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedView.swift; sourceTree = "<group>"; };
 		A666F7F723CCA7AD0069F0F6 /* HousekeepingBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HousekeepingBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A666F7FA23CCA7AD0069F0F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A666F7FC23CCA7AD0069F0F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +64,6 @@
 				F50932E40F19F32727F316F3 /* Pods-HousekeepingBook.debug.xcconfig */,
 				055852CD2F88CF827E05CB74 /* Pods-HousekeepingBook.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -89,6 +92,8 @@
 				A666F7FC23CCA7AD0069F0F6 /* SceneDelegate.swift */,
 				A666F7FE23CCA7AD0069F0F6 /* DayViewController.swift */,
 				A666F80E23CCA83B0069F0F6 /* MonthViewController.swift */,
+				31CA2C8623CE2740005116D2 /* DateCell.swift */,
+				31CA2C8823CEDA2F005116D2 /* SelectedView.swift */,
 				A666F81223CCB1A80069F0F6 /* BudgetViewController.swift */,
 				A666F81023CCA85B0069F0F6 /* StatsViewController.swift */,
 				A666F80323CCA7AF0069F0F6 /* Assets.xcassets */,
@@ -213,7 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A666F7FF23CCA7AD0069F0F6 /* DayViewController.swift in Sources */,
+				31CA2C8923CEDA2F005116D2 /* SelectedView.swift in Sources */,
 				A666F81323CCB1A80069F0F6 /* BudgetViewController.swift in Sources */,
+				31CA2C8723CE2740005116D2 /* DateCell.swift in Sources */,
 				A666F80F23CCA83B0069F0F6 /* MonthViewController.swift in Sources */,
 				A666F7FB23CCA7AD0069F0F6 /* AppDelegate.swift in Sources */,
 				A666F81123CCA85B0069F0F6 /* StatsViewController.swift in Sources */,
@@ -355,7 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G63629C67V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HousekeepingBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
