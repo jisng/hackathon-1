@@ -12,12 +12,12 @@ import UIKit
 class DateCell: JTACDayCell {
      let dateLabel = UILabel()
      let selectedView = UIView()
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
