@@ -28,7 +28,6 @@ class MonthViewController: UIViewController {
         calender.calendarDelegate = self
         calender.register(DateCell.self, forCellWithReuseIdentifier: "DateCell")
         budgetButton.addTarget(self, action: #selector(didTapBudgetButton), for: .touchUpInside)
-        
         setupUI()
     }
     
@@ -80,7 +79,6 @@ extension MonthViewController: JTACMonthViewDataSource{
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2020 01 01")!
         let endDate = Date()
-        print(endDate)
         return ConfigurationParameters(startDate: startDate,
                                        endDate: endDate)
     }
@@ -117,6 +115,7 @@ extension MonthViewController: JTACMonthViewDelegate {
     private func configurationCell(view: JTACDayCell, cellState: CellState) {
            guard let cell = view as? DateCell else { return }
            cell.dateLabel.text = cellState.text
+        
            handleCell(cell: cell, cellState: cellState)
            handleCellSelected(cell: cell, cellState: cellState)
        }
@@ -128,17 +127,41 @@ extension MonthViewController: JTACMonthViewDelegate {
            }else {
                cell.isHidden = true
            }
+            
+        if cellState.day == .sunday {
+            cell.dateLabel.textColor = .red
+        }else if cellState.day == .saturday {
+            cell.dateLabel.textColor = .blue
+        }else {
+            cell.dateLabel.textColor = .black
+        }
+        
+        let currentTime = setCurrentTimeZone(state: Date())
+        let cellTime = setCurrentTimeZone(state: cellState.date)
+        print("current: \(currentTime) | cellTime \(cellTime)")
+        if currentTime == cellTime {
+            cell.selectedView.isHidden = false
+        }else {
+            cell.selectedView.isHidden = true
+        }
+        
+        
+        
        }
     private func handleCellSelected(cell: DateCell, cellState: CellState) {
         if cellState.isSelected {
-            print("selected")
-            cell.selectedView.isHidden = false
-            cell.selectedView.layer.cornerRadius = cell.selectedView.bounds.width / 2
             
         }else {
-            print("deselected")
-            cell.selectedView.isHidden = true
+            
         }
+    }
+    
+    private func setCurrentTimeZone(state: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        dateFormatter.timeZone = TimeZone.current
+        let date = dateFormatter.string(from: state)
+        return date
     }
     
 }

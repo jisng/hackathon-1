@@ -12,7 +12,7 @@ import UIKit
 class DateCell: JTACDayCell {
     
      let dateLabel = UILabel()
-     let selectedView = UIView()
+     let selectedView = SelectedView()
     
     
     override init(frame: CGRect) {
@@ -27,7 +27,6 @@ class DateCell: JTACDayCell {
         dateLabel.textAlignment = .center
         
         contentView.backgroundColor = .white
-        selectedView.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         
         contentView.addSubview(selectedView)
         contentView.addSubview(dateLabel)
@@ -43,6 +42,8 @@ class DateCell: JTACDayCell {
         selectedView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5).isActive = true
         
     }
+    
+    
     
     
 
