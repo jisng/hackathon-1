@@ -10,15 +10,14 @@ import JTAppleCalendar
 import UIKit
 
 class DateCell: JTACDayCell {
-    
      let dateLabel = UILabel()
      let selectedView = UIView()
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -41,9 +40,5 @@ class DateCell: JTACDayCell {
         selectedView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         selectedView.widthAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5).isActive = true
         selectedView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5).isActive = true
-        
     }
-    
-    
-
 }

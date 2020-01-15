@@ -11,7 +11,7 @@ import UIKit
 // tab-bar-tag-1: 월별, 캘린더 컨트롤러
 
 class MonthViewController: UIViewController {
-    
+
     private let calender = JTACMonthView()
     private let budgetButton = UIButton(type: .system)
     private var budget = 0 {
@@ -29,6 +29,7 @@ class MonthViewController: UIViewController {
         calender.register(DateCell.self, forCellWithReuseIdentifier: "DateCell")
         budgetButton.addTarget(self, action: #selector(didTapBudgetButton), for: .touchUpInside)
         
+
         setupUI()
     }
     
@@ -39,6 +40,7 @@ class MonthViewController: UIViewController {
         present(BudgetViewController(), animated: true)
     }
     
+
     private func setupUI() {
         let guide = view.safeAreaLayoutGuide
         view.addSubview(calender)
@@ -63,13 +65,9 @@ class MonthViewController: UIViewController {
         calender.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         calender.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         calender.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-        
+        TagData.tag1
     }
     
-    
-    
-
-
 }
 
 extension MonthViewController: JTACMonthViewDataSource{
@@ -80,6 +78,7 @@ extension MonthViewController: JTACMonthViewDataSource{
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2020 01 01")!
         let endDate = Date()
+
         print(endDate)
         return ConfigurationParameters(startDate: startDate,
                                        endDate: endDate)
