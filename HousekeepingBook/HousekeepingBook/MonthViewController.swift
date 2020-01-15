@@ -11,7 +11,7 @@ import UIKit
 // tab-bar-tag-1: 월별, 캘린더 컨트롤러
 
 class MonthViewController: UIViewController {
-
+    
     private let calender = JTACMonthView()
     private let budgetButton = UIButton(type: .system)
     private var budget = 0 {
@@ -29,7 +29,6 @@ class MonthViewController: UIViewController {
         calender.register(DateCell.self, forCellWithReuseIdentifier: "DateCell")
         budgetButton.addTarget(self, action: #selector(didTapBudgetButton), for: .touchUpInside)
         
-
         setupUI()
     }
     
@@ -40,7 +39,18 @@ class MonthViewController: UIViewController {
         present(BudgetViewController(), animated: true)
     }
     
-
+    var tag: TagModel?
+    func test() {
+        for tempTag in TagData.tags {
+            guard tempTag.name == "식사" else { continue }
+            tag = tempTag
+            break
+        }
+        
+//        TagData.tags.forEach { if $0.name == "식사" { tag = tempTag } }
+    }
+    
+    
     private func setupUI() {
         let guide = view.safeAreaLayoutGuide
         view.addSubview(calender)
@@ -65,7 +75,6 @@ class MonthViewController: UIViewController {
         calender.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         calender.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         calender.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-        TagData.tag1
     }
     
 }
@@ -78,7 +87,7 @@ extension MonthViewController: JTACMonthViewDataSource{
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2020 01 01")!
         let endDate = Date()
-
+        
         print(endDate)
         return ConfigurationParameters(startDate: startDate,
                                        endDate: endDate)
@@ -96,7 +105,7 @@ extension MonthViewController: JTACMonthViewDelegate {
         return cell
     }
     
-   
+    
     
     func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let cell = cell as! DateCell
@@ -114,20 +123,20 @@ extension MonthViewController: JTACMonthViewDelegate {
     
     
     private func configurationCell(view: JTACDayCell, cellState: CellState) {
-           guard let cell = view as? DateCell else { return }
-           cell.dateLabel.text = cellState.text
-           handleCell(cell: cell, cellState: cellState)
-           handleCellSelected(cell: cell, cellState: cellState)
-       }
-
-       private func handleCell(cell: DateCell, cellState: CellState) {
+        guard let cell = view as? DateCell else { return }
+        cell.dateLabel.text = cellState.text
+        handleCell(cell: cell, cellState: cellState)
+        handleCellSelected(cell: cell, cellState: cellState)
+    }
+    
+    private func handleCell(cell: DateCell, cellState: CellState) {
         
-           if cellState.dateBelongsTo == .thisMonth {
+        if cellState.dateBelongsTo == .thisMonth {
             cell.isHidden = false
-           }else {
-               cell.isHidden = true
-           }
-       }
+        }else {
+            cell.isHidden = true
+        }
+    }
     private func handleCellSelected(cell: DateCell, cellState: CellState) {
         if cellState.isSelected {
             print("selected")

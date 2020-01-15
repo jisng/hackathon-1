@@ -54,6 +54,8 @@ class DayViewController: UIViewController {
         view.addSubview(budgetLabel)
         view.addSubview(plusButton)
         view.addSubview(tableView)
+        
+        let costModel = CostModel(tag: TagData.beautyTag, memo: "", price: 100)
     }
     
     private func layout() {

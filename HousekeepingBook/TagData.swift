@@ -14,6 +14,10 @@ struct TagModel {
     let color: UIColor
 }
 
+enum TagEnum {
+    
+}
+
 struct TagData {
     // 식비, 교통비, 휴대폰비, 공과금, 선물, 미용, 이자, 저금, 기타,
     static let foodTag = TagModel(name: "식사", image: UIImage(named: "")!, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
@@ -25,4 +29,10 @@ struct TagData {
     static let interestTag = TagModel(name: "이자", image: UIImage(named: "")!, color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
     static let saveMoneyTag = TagModel(name: "저금", image: UIImage(named: "")!, color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
     static let etcTage = TagModel(name: "기타", image: UIImage(named: "")!, color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+    
+    static let tags = [
+        TagModel(name: "식사", image: UIImage(named: "")!, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)),
+        TagModel(name: "교통", image: UIImage(named: "")!, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)),
+        TagModel(name: "통신", image: UIImage(named: "")!, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+    ]
 }
