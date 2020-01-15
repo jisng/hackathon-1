@@ -11,7 +11,7 @@ import UIKit
 // tab-bar-tag-1: 월별, 캘린더 컨트롤러
 
 class MonthViewController: UIViewController {
-    
+
     private let calender = JTACMonthView()
     private let budgetButton = UIButton(type: .system)
     private var budget = 0 {
@@ -28,6 +28,7 @@ class MonthViewController: UIViewController {
         calender.calendarDelegate = self
         calender.register(DateCell.self, forCellWithReuseIdentifier: "DateCell")
         budgetButton.addTarget(self, action: #selector(didTapBudgetButton), for: .touchUpInside)
+
         setupUI()
     }
     
@@ -38,6 +39,7 @@ class MonthViewController: UIViewController {
         present(BudgetViewController(), animated: true)
     }
     
+
     private func setupUI() {
         let guide = view.safeAreaLayoutGuide
         view.addSubview(calender)
@@ -62,13 +64,8 @@ class MonthViewController: UIViewController {
         calender.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         calender.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         calender.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-        
     }
     
-    
-    
-
-
 }
 
 extension MonthViewController: JTACMonthViewDataSource{
