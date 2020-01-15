@@ -10,7 +10,7 @@ import UIKit
 
 struct CostModel {
     
-    let tag: TagModel 
+    let tag: TagModel
     let memo: String
     let price: Int
     
