@@ -28,7 +28,6 @@ class MonthViewController: UIViewController {
         calender.calendarDelegate = self
         calender.register(DateCell.self, forCellWithReuseIdentifier: "DateCell")
         budgetButton.addTarget(self, action: #selector(didTapBudgetButton), for: .touchUpInside)
-        
         setupUI()
     }
     
@@ -89,6 +88,7 @@ extension MonthViewController: JTACMonthViewDataSource{
         let endDate = Date()
         
         print(endDate)
+
         return ConfigurationParameters(startDate: startDate,
                                        endDate: endDate)
     }
@@ -137,16 +137,21 @@ extension MonthViewController: JTACMonthViewDelegate {
             cell.isHidden = true
         }
     }
+
     private func handleCellSelected(cell: DateCell, cellState: CellState) {
         if cellState.isSelected {
-            print("selected")
-            cell.selectedView.isHidden = false
-            cell.selectedView.layer.cornerRadius = cell.selectedView.bounds.width / 2
             
         }else {
-            print("deselected")
-            cell.selectedView.isHidden = true
+            
         }
+    }
+    
+    private func setCurrentTimeZone(state: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        dateFormatter.timeZone = TimeZone.current
+        let date = dateFormatter.string(from: state)
+        return date
     }
     
 }
