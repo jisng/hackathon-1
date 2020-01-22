@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  HousekeepingBook
+//  AppAccountBook
 //
-//  Created by 박지승 on 2020/01/13.
+//  Created by 박지승 on 2020/01/21.
 //  Copyright © 2020 Jisng. All rights reserved.
 //
 
@@ -17,8 +17,25 @@ var window: UIWindow?
         if #available(iOS 13, *) {
             
         } else {
+            let todayVC = TodayViewController()
+            todayVC.tabBarItem = UITabBarItem(title: "Today",
+                                            image: UIImage(systemName: "plus.square.on.square"),
+                                            // "plus.square" // plus.circle // plusminus.circle // wonsign.circle // wonsign.square
+                                            tag: 0)
+            let monthVC = MonthViewController()
+            monthVC.tabBarItem = UITabBarItem(title: "Month",
+                                              image: UIImage(systemName: "calendar"),
+                                              tag: 1)
+            let chartVC = ChartViewController()
+            chartVC.tabBarItem = UITabBarItem(title: "Stats",
+                                              image: UIImage(systemName: "line.horizontal.3.decrease"),
+                                              tag: 2)
+            
+            let tabBarController = UITabBarController()
+            tabBarController.viewControllers = [todayVC, monthVC, chartVC]
+            
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = DayViewController()
+            window?.rootViewController = tabBarController
             window?.makeKeyAndVisible()
         }
         return true

@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  HousekeepingBook
+//  AppAccountBook
 //
-//  Created by 박지승 on 2020/01/13.
+//  Created by 박지승 on 2020/01/21.
 //  Copyright © 2020 Jisng. All rights reserved.
 //
 
@@ -15,22 +15,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        let dayVC = DayViewController()
-        dayVC.tabBarItem = UITabBarItem(title: "Today", image: nil
-            , tag: 0)
-        let monthVC = MonthViewController()
-        monthVC.tabBarItem = UITabBarItem(title: "Month", image: nil
-        , tag: 1)
-        let statsVC = StatsViewController()
-        statsVC.tabBarItem = UITabBarItem(title: "Stats", image: nil
-        , tag: 2)
-        
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [dayVC, monthVC, statsVC]
-        
+        let todayVC = TodayViewController()
+                todayVC.tabBarItem = UITabBarItem(title: "Today",
+                                                image: UIImage(systemName: "wonsign.square"),
+                                                // "plus.square" // plus.circle // plusminus.circle // wonsign.circle // wonsign.square // "plus.square.on.square" //
+                                                tag: 0)
+                let monthVC = MonthViewController()
+                monthVC.tabBarItem = UITabBarItem(title: "Month",
+                                                  image: UIImage(systemName: "calendar"),
+                                                  tag: 1)
+                let chartVC = ChartViewController()
+                chartVC.tabBarItem = UITabBarItem(title: "Stats",
+                                                  image: UIImage(systemName: "line.horizontal.3.decrease"),
+                                                  tag: 2)
+                
+                let tabBarController = UITabBarController()
+                tabBarController.viewControllers = [todayVC, monthVC, chartVC]
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = tabBarController
+//        window?.rootViewController = TestViewController()
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
     }

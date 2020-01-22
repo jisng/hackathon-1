@@ -1,6 +1,6 @@
 
 # add(jisng)
-.DS_Store
+*.DS_Store
 hidden/
 *.pem
 confidential.*
