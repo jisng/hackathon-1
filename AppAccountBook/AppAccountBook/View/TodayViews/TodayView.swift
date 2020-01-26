@@ -16,6 +16,7 @@ class TodayView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = AppColors.lightGray
         baseUI()
         autoLayout()
     }

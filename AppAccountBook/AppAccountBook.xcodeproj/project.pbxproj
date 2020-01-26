@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		A605CB5823D821F300777436 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605CB5723D821F300777436 /* TagData.swift */; };
 		A605CB5A23D83D6B00777436 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605CB5923D83D6B00777436 /* TestViewController.swift */; };
 		A605CB5E23D847F800777436 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605CB5D23D847F800777436 /* InputViewController.swift */; };
+		A605CB6023DD7AAE00777436 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605CB5F23DD7AAE00777436 /* DateCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		A605CB5723D821F300777436 /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		A605CB5923D83D6B00777436 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A605CB5D23D847F800777436 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		A605CB5F23DD7AAE00777436 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,6 @@
 				1E7760C7B82B40393CE9440E /* Pods-AppAccountBook.debug.xcconfig */,
 				387D89C2FC1301E1B11DAA7A /* Pods-AppAccountBook.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				A605CB4A23D6FAC000777436 /* MonthView.swift */,
+				A605CB5F23DD7AAE00777436 /* DateCell.swift */,
 			);
 			path = MonthViews;
 			sourceTree = "<group>";
@@ -294,6 +296,7 @@
 				A605CB5823D821F300777436 /* TagData.swift in Sources */,
 				A605CB2E23D6F88E00777436 /* AppDelegate.swift in Sources */,
 				A605CB5E23D847F800777436 /* InputViewController.swift in Sources */,
+				A605CB6023DD7AAE00777436 /* DateCell.swift in Sources */,
 				A605CB3023D6F88E00777436 /* SceneDelegate.swift in Sources */,
 				A605CB4923D6FAB500777436 /* TodayView.swift in Sources */,
 				A605CB4723D6F99E00777436 /* ChartViewController.swift in Sources */,

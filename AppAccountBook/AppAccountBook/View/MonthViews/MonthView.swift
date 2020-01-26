@@ -10,7 +10,7 @@ import UIKit
 
 class MonthView: UIView {
     
-    private let scrollView = UIScrollView()
+    let scrollView = UIScrollView()
     private let budgetView = UIView()
     private let budgetButton = UIButton(type: .system)
     
@@ -28,7 +28,6 @@ class MonthView: UIView {
         scrollView.isPagingEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.backgroundColor = .red
         
         budgetView.backgroundColor = AppColors.mainColor
         
@@ -48,7 +47,7 @@ class MonthView: UIView {
         
         let guide = super.safeAreaLayoutGuide
         
-        scrollView.topAnchor.constraint(equalTo: budgetButton.bottomAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: budgetView.bottomAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
