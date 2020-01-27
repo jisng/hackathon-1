@@ -70,6 +70,7 @@ extension MonthViewController: JTACMonthViewDelegate {
         guard let cell = view as? DateCell  else { return }
         cell.dateLabel.text = cellState.text
         handleCellTextColor(cell: cell, cellState: cellState)
+        handleCellSelected(cell: cell, cellState: cellState)
     }
 
     private func handleCellTextColor(cell: DateCell, cellState: CellState) {
@@ -79,4 +80,22 @@ extension MonthViewController: JTACMonthViewDelegate {
             cell.isHidden = true
         }
     }
+    
+    private func handleCellSelected(cell: DateCell, cellState: CellState) {
+        if cellState.isSelected {
+            cell.selectedView.layer.cornerRadius = cell.selectedView.frame.width/2
+            cell.selectedView.isHidden = false
+        } else {
+            cell.selectedView.isHidden = true
+        }
+    }
+    
+    func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
+        configureCell(view: cell, cellState: cellState)
+    }
+    
+    func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
+        configureCell(view: cell, cellState: cellState)
+    }
+    
 }
